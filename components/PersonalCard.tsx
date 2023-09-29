@@ -3,6 +3,9 @@
 import React from 'react'
 import Image from 'next/image'
 import { Github, Linkedin, Twitter } from './social-icons/icons'
+import Link from './Link'
+import siteMetadata from '@/data/siteMetadata'
+import SocialIcon from '@/components/social-icons'
 
 const aviationYears = () => {
   const currentYear = new Date().getFullYear()
@@ -26,16 +29,13 @@ const PersonalCard = () => {
         <h1 className="mt-4 text-2xl font-bold">Dean McLennan</h1>
         <h2 className="mt-2 text-xl font-semibold">Aerospace | Electronics | Software Dev</h2>
         {/* Social icons */}
-        <div className="flex mt-4 space-x-4">
-          <a href="/" className="text-gray-400 hover:text-gray-500" aria-label="Twitter">
-            <Twitter className="w-6 h-6" />
-          </a>
-          <a href="/" className="text-gray-400 hover:text-gray-500" aria-label="Github">
-            <Github className="w-6 h-6" />
-          </a>
-          <a href="/" className="text-gray-400 hover:text-gray-500" aria-label="Linkedin">
-            <Linkedin className="w-6 h-6" />
-          </a>
+        <div className="flex my-3 space-x-4">
+          {/* <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} /> */}
+          <SocialIcon kind="github" href={siteMetadata.github} size={6} />
+          {/* <SocialIcon kind="facebook" href={siteMetadata.facebook} size={6} />
+          <SocialIcon kind="youtube" href={siteMetadata.youtube} size={6} /> */}
+          <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
+          <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
         </div>
       </div>
       {/* Description section */}
